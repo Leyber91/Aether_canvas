@@ -1,3 +1,4 @@
+# backend/db/sqlalchemy_manager.py
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, scoped_session, declarative_base
 from shared.config import config
@@ -14,3 +15,22 @@ def init_db():
 
 def get_session():
     return SessionLocal()
+
+# Add this class to make the test code work without changing it
+class SQLAlchemyManager:
+    """Class wrapper for the existing SQLAlchemy functions"""
+    
+    @classmethod
+    def init_db(cls):
+        """Initialize the database schema"""
+        init_db()
+    
+    @classmethod
+    def get_session(cls):
+        """Get a database session"""
+        return get_session()
+    
+    @classmethod
+    def get_base(cls):
+        """Get the SQLAlchemy Base class"""
+        return Base
