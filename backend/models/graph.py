@@ -16,4 +16,8 @@ class Graph(Base):
     created_at = Column(DateTime, default=datetime.utcnow)
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
+    # backend/models/graph.py (already fixed earlier, but verify again)
+    edges = relationship('Edge', back_populates='graph', cascade='all, delete-orphan')
     nodes = relationship('Node', back_populates='graph', cascade='all, delete-orphan')
+    executions = relationship('Execution', back_populates='graph', cascade='all, delete-orphan')  # explicitly added
+

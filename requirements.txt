@@ -4,3 +4,16 @@ websockets
 python-dotenv
 jsonschema
 python-dotenv
+
+redis
+networkx
+PyJWT
+structlog
+
+Flask
+Flask-CORS
+aiohttp
+
+requests
+pyjwt
+cryptography
