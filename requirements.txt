@@ -1,0 +1,6 @@
+SQLAlchemy
+psycopg2-binary
+websockets
+python-dotenv
+jsonschema
+python-dotenv
